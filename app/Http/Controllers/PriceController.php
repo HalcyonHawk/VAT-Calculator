@@ -48,6 +48,7 @@ class PriceController extends Controller
 
         $prices = Price::all();
 
+        //Headers to download csv
         $headers = [
             "Content-type"        => "text/csv",
             "Content-Disposition" => "attachment; filename=$fileName",
@@ -56,9 +57,11 @@ class PriceController extends Controller
             "Expires"             => "0"
         ];
 
+        //Table columns
         $columns = ['Amount', 'VAT Rate', 'Total'];
 
-        $callback = function() use ($tasks, $columns) {
+        //Table data
+        $callback = function() use ($prices, $columns) {
             $file = fopen('php://output', 'w');
             fputcsv($file, $columns);
 

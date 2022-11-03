@@ -19,7 +19,8 @@ class Price extends Model
      */
     public function getFinalPriceAttribute()
     {
-        return $this->gross_sum * $this->vat_rate;
+        //1 + vat rate to multiply. Eg. 1 + 0.2 to add 20%. 1 + -0.2 = 0.8 to remove 20%
+        return $this->gross_sum * (1 + $this->vat_rate);
     }
 
     /**

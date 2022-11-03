@@ -62,3 +62,23 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## Notes
+Calculate adding or substracting a given VAT to given amount
+View past calculations in a table
+Clear all past calculations from table
+Export past calculations table as a .csv file
+
+## Database
+MySQL table 
+CREATE TABLE `vat_calc`.`prices` (
+  `price_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `gross_sum` INT NOT NULL,
+  `vat_rate` DECIMAL(3,2) NOT NULL,
+  PRIMARY KEY (`price_id`));
+
+Or run 
+php artisan migrate
+
+This also makes user tables however these are not used yet so only the prices table is needed

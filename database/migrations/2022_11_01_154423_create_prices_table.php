@@ -14,9 +14,9 @@ class CreatePricesTable extends Migration
     public function up()
     {
         Schema::create('prices', function (Blueprint $table) {
-            $table->id();
-            $table->int('gross_sum');
-            $table->int('vat_rate');
+            $table->id('price_id');
+            $table->integer('gross_sum');
+            $table->decimal('vat_rate', $precision = 3, $scale = 2);
         });
     }
 
