@@ -14,7 +14,7 @@
                 <!--Total price before VAT added/removed-->
                 <div class="form-group row">
                     <div class="col-md-12">
-                        <input name="gross_sum" type="text" placeholder="Amount"
+                        <input name="gross_sum" min="0" type="number" placeholder="Amount"
                         class="form-control" value="{{ old('gross_sum') }}" required>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                 <!--Percentage VAT to be added/removed-->
                 <div class="form-group row">
                     <div class="col-md-12">
-                        <input name="vat_rate" type="text" placeholder="VAT Rate %"
+                        <input name="vat_rate" type="number" min="0" max="100" placeholder="VAT Rate %"
                         class="form-control" value="{{ old('vat_rate') }}" required>
                     </div>
                 </div>
