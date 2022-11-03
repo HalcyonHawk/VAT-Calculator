@@ -54,12 +54,12 @@
                 <div class="card-body" style="background-color: white; padding: 20px">
 
                     <div class="row">
-                        <div class="col-xs-2">
+                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-2">
                             {{-- Export table as .csv file --}}
                             <a href="{{ route('price.csv') }}" class="btn btn-primary">Export as CSV</a>
                         </div>
 
-                        <div class="col-xs-2">
+                        <div>
                             {{-- Delete all price calculations --}}
                             <form action="{{ route('price.clear') }}" method="POST">
                                 {{ csrf_field() }}
